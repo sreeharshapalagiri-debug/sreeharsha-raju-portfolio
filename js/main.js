@@ -150,48 +150,8 @@ $(document).ready(function () {
 (function ($) {
     'use strict';
 
-    $('#contactForm').on('submit', function (e) {
-        e.preventDefault();
+    // Form handler is now in index.html for Vercel integration
 
-        var uri = $(this).attr('action');
-        $('#form-submit').val('Wait...');
-        var name = $('#contact-name').val(),
-            email = $('#contact-email').val(),
-            message = $('#contact-message').val();
-
-
-        var required = 0;
-        $('.con-validate', this).each(function () {
-            if ($(this).val() == '') {
-                $(this).addClass('con-error');
-                required += 1;
-            } else {
-                if ($(this).hasClass('con-error')) {
-                    $(this).removeClass('con-error');
-                    if (required > 0) {
-                        required -= 1;
-                    }
-                }
-            }
-        });
-
-        if (required === 0) {
-            $.ajax({
-                type: "POST",
-                url: 'mail.php',
-                data: { con_name: name, con_email: email, con_message: message },
-                success: function (data) {
-                    $("#contactForm input, #contactForm textarea").val('');
-                    $("#contact-submit.main-button").html('Message Sent!');
-                    $("#contact-submit.main-button").addClass("success");
-                    console.log(data);
-                }
-            });
-        } else {
-            $("#contact-submit.main-button").addClass('error');
-            $("#contact-submit.main-button").html('Failed!');
-        }
-    })
     $(".con-validate").keyup(function () {
         $(this).removeClass('con-error');
     });

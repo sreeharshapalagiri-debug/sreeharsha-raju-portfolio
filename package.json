@@ -1,0 +1,12 @@
+{
+  "name": "sreeharsha-raju-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio for SreeHarsha Raju",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.1"
+  }
+}
