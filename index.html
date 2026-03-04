@@ -982,25 +982,34 @@
     </section>
     <!--Contact Us Section Start-->
     <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
-            e.preventDefault();
+document.getElementById("contact-form").addEventListener("submit", async function(e){
 
-            const name = document.getElementById("contact-name").value;
-            const email = document.getElementById("contact-email").value;
-            const message = document.getElementById("contact-message").value;
+e.preventDefault();
 
-            const response = await fetch("/api/sendMail", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ name, email, message })
-            });
+const formData = {
+  name: this.name.value,
+  email: this.email.value,
+  message: this.message.value
+};
 
-            const data = await response.json();
-            alert(data.message || data.error);
-        });
-    </script>
+const response = await fetch("/api/sendMail", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(formData)
+});
+
+const result = await response.json();
+
+if(result.success){
+  window.location.href = "/thankyou.html";
+}else{
+  alert("Message failed. Try again.");
+}
+
+});
+</script>
 
     <!--Footer Section Start-->
     <footer class="wave-footer">
