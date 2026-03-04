@@ -10,13 +10,13 @@
     {
       "src": "/api/sendMail",
       "dest": "/api/sendMail.js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
-}
-
-{
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
