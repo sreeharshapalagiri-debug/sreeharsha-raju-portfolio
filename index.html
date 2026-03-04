@@ -13,7 +13,7 @@
 
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">F
 
     <!--Bootstrap css-->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -987,9 +987,9 @@ document.getElementById("contactForm").addEventListener("submit", async function
 e.preventDefault();
 
 const formData = {
-  name: this.con_name.value,
-  email: this.con_email.value,
-  message: this.con_message.value
+  name: document.getElementById("contact-name").value,
+  email: document.getElementById("contact-email").value,
+  message: document.getElementById("contact-message").value
 };
 
 const response = await fetch("/api/sendMail", {
