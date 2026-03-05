@@ -2,24 +2,8 @@
   "name": "sreeharsha-raju-portfolio",
   "version": "1.0.0",
   "description": "Personal Portfolio for SreeHarsha Raju",
-  "main": "index.html",
-  "scripts": {
-    "start": "serve",
-    "build": "echo 'No build required'"
-  },
+  "type": "commonjs",
   "dependencies": {
     "nodemailer": "^6.9.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sreeharshapalagiri-debug/portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/sreeharshapalagiri-debug/portfolio/issues"
-  },
-  "homepage": "https://github.com/sreeharshapalagiri-debug/portfolio#readme"
+  }
 }
